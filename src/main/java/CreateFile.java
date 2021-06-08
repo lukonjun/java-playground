@@ -57,6 +57,20 @@ public class CreateFile {
         printWriter.close();
     }
 
+    /**
+     * Pass a String and the absolute File Path
+     * @param str
+     * @param filePath
+     * @throws IOException
+     */
+    public static void writeToFile(String str, String filePath) throws IOException{
+
+        BufferedWriter writer = new BufferedWriter(new java.io.FileWriter(filePath));
+        writer.write(str);
+
+        writer.close();
+    }
+
     public static File createEmptyTempFile(String fileName) throws IOException {
 
         File tempDirectory = new File(System.getProperty("java.io.tmpdir"));
